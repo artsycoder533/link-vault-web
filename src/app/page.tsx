@@ -1,19 +1,16 @@
 "use client";
-import Head from "next/head";
 import Link from "next/link";
-import { useForm, ValidationError } from "@formspree/react";
-import logo from "../../public/128.png";
+import { useForm } from "@formspree/react";
 import Image from "next/image";
-import { BiLinkExternal } from "react-icons/bi";
+import { BiCheckCircle, BiLinkExternal } from "react-icons/bi";
 import screenshot from "../../public/screenshot.png";
 
 const Home = () => {
   const [state, handleSubmit] = useForm(
     process.env.NEXT_PUBLIC_FORM_ID as string
   );
-  if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
-  }
+
+
   return (
     <div className="bg-primary text-white">
       <main className="py-16">
@@ -46,6 +43,7 @@ const Home = () => {
                   alt="screenshot of My Link Vault"
                   fill
                   className="object-contain"
+                  priority
                 />
               </div>
               <div className="flex flex-col lg:p-8 max-w-[700px] w-[90vw] gap-8">
@@ -117,7 +115,7 @@ const Home = () => {
         <section id="contact" className="py-16 bg-primary">
           <div className="container mx-auto px-4 max-w-[1280px]">
             <h2 className="text-3xl font-bold mb-8">Contact Us</h2>
-            <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
+            {state.succeeded ? <p className="flex items-center gap-2"><BiCheckCircle className="text-green-500 text-2xl"/> Your message has been sent!  We will be in touch with you soon!</p> : <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
               <div className="mb-4">
                 <label htmlFor="name" className="block mb-1">
                   Name
@@ -126,7 +124,7 @@ const Home = () => {
                   id="name"
                   type="text"
                   name="text"
-                  className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-300"
+                  className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-300 text-black"
                   required
                 />
               </div>
@@ -138,7 +136,7 @@ const Home = () => {
                   id="email"
                   type="email"
                   name="email"
-                  className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-300"
+                  className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-300 text-black"
                   required
                 />
               </div>
@@ -150,7 +148,7 @@ const Home = () => {
                   id="message"
                   name="message"
                   rows={5}
-                  className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-300"
+                  className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-300 text-black"
                   required
                 ></textarea>
               </div>
@@ -161,7 +159,7 @@ const Home = () => {
               >
                 {state.submitting ? "Submitting..." : "Submit"}
               </button>
-            </form>
+            </form>}
           </div>
         </section>
       </main>
