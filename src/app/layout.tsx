@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   title: "My Link Vault",
   description:
     "Link Vault is a powerful Chrome extension designed to streamline your web browsing experience and help you declutter your browser.",
+  authors: [
+    { name: "Natasha Johnson", url: "https://www.natashajohnson.dev/" },
+  ],
+  creator: "Natasha Johnson",
+  referrer: "origin-when-cross-origin",
+  category: "workflow & planning"
 };
 
 export default function RootLayout({
