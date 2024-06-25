@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   ],
   creator: "Natasha Johnson",
   referrer: "origin-when-cross-origin",
-  category: "workflow & planning"
+  category: "workflow & planning",
+  verification: { google: "Oo3HrK4uDyvizqZBxy1I0cIUpNqUjm45kg0xLOtEMa4" },
 };
 
 export default function RootLayout({
