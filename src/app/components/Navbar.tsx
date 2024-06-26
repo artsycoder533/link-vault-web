@@ -31,7 +31,7 @@ const Navbar = (props: Props) => {
   }, [open]);
 
   return (
-    <nav className="container flex items-center justify-between max-w-[1280px] w-[90vw] flex-col md:flex-row md:w-full mx-auto">
+    <nav className="container flex items-center justify-between max-w-[1280px] w-[90vw] flex-col md:flex-row md:w-full mx-auto px-2 2xl:px-0">
       <div className="flex items-center justify-between w-full md:w-auto">
         <Link href="#hero" className="flex items-center gap-2 flex-row" scroll={true}>
           <div className="w-[60px] h-[60px]">
