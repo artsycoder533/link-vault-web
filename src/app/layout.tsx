@@ -7,9 +7,10 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://my-link-vault.vercel.app/'),
   openGraph: {
     images: '/opengraph-image.png',
-    type: 'website',
+    type: "website",
     siteName: 'My Link Vault',
     locale: 'en_US'
   },
