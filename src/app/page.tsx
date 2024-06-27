@@ -31,7 +31,7 @@ const Home = () => {
             </Link>
           </div>
         </section>
-{/* max-w-[450px] w-[90vw] lg:h-[700px] relative */}
+
         <section id="features" className="py-20">
           <div className="container mx-auto px-4 max-w-[1280px]">
             <h2 className="text-3xl font-bold mb-8">Features</h2>
